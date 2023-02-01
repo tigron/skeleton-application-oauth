@@ -3,7 +3,9 @@
     "description": "Skeleton OAuth application",
     "type": "library",
     "require" : {
-		"tigron/skeleton-core": ">=2"
+		"tigron/skeleton-core": ">=4",
+		"tigron/skeleton-application-web": "^0.0.4",
+		"league/oauth2-server": "^8.3"
     },
     "license": "MIT",
     "authors": [
@@ -17,6 +19,9 @@
         "issues": "https://github.com/tigron/skeleton-application-oauth/issues"
     },
     "autoload": {
-        "psr-4": { "Skeleton\\Application\\": "lib/Skeleton/Application/" }
+        "psr-4": {
+            "Skeleton\\Application\\": "lib/Skeleton/Application/",
+            "Skeleton\\Oauth\\": "lib/Skeleton/Oauth/"
+        }
     }
 }
