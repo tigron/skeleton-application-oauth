@@ -18,10 +18,12 @@ class Authorize extends \Skeleton\Application\Oauth\Handler {
 		$query_params = $this->server_request->getQueryParams();
 
 		// basic validation of the request
+		/*
 		if (!isset($query_params['response_type']) || $query_params['response_type'] !== 'code' || !isset($query_params['client_id'])) {
 			// we should probably call an event here
 			throw new \Skeleton\Oauth\Exception\Request\Invalid();
 		}
+		*/
 
 		if (!isset($_SESSION['auth_request'])) {
 			$_SESSION['auth_request'] = $this->server->validateAuthorizationRequest($this->server_request);
