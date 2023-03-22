@@ -1,22 +1,29 @@
 {
-    "name": "tigron/skeleton-application-oauth",
-    "description": "Skeleton OAuth application",
-    "type": "library",
-    "require" : {
-		"tigron/skeleton-core": ">=2"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Tigron BVBA",
-            "email": "support@tigron.be"
-        }
-    ],
-    "support": {
-        "source": "https://github.com/tigron/skeleton-application-oauth",
-        "issues": "https://github.com/tigron/skeleton-application-oauth/issues"
-    },
-    "autoload": {
-        "psr-4": { "Skeleton\\Application\\": "lib/Skeleton/Application/" }
-    }
+	"name": "tigron/skeleton-application-oauth",
+	"description": "Skeleton OAuth application",
+	"type": "library",
+	"require" : {
+		"tigron/skeleton-application-web": "^0.0",
+		"tigron/skeleton-core": "^4.0",
+		"tigron/skeleton-database": "^0.3.10",
+		"guzzlehttp/psr7": "^2.4",
+		"league/oauth2-server": "^8.4"
+	},
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Tigron BVBA",
+			"email": "support@tigron.be"
+		}
+	],
+	"support": {
+		"source": "https://github.com/tigron/skeleton-application-oauth",
+		"issues": "https://github.com/tigron/skeleton-application-oauth/issues"
+	},
+	"autoload": {
+		"psr-4": {
+			"Skeleton\\Application\\": "lib/Skeleton/Application/",
+			"Skeleton\\Oauth\\": "lib/Skeleton/Oauth/"
+		}
+	}
 }
