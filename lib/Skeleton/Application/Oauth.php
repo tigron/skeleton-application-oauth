@@ -8,7 +8,7 @@ namespace Skeleton\Application;
 use \Skeleton\Core\Http\Session;
 use \Skeleton\Core\Http\Media;
 
-class Oauth extends \Skeleton\Application\web {
+class Oauth extends \Skeleton\Application\Web {
 
 	/**
 	 * Get details
