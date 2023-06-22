@@ -21,6 +21,11 @@ class Accesstoken implements AccessTokenRepositoryInterface {
 	 * @return AccessTokenEntityInterface
 	 */
 	public function getNewToken(ClientEntityInterface $clientEntity, array $scopes, $userIdentifier = null) {
+		$repository = new \Skeleton\Oauth\Repository\User();
+		if ($repository->getUserEntityByUserIdentifier($userIdentifier) === null) {
+			throw new \Skeleton\Oauth\Exception\Authentication\Failed();
+		}
+
 		$accessToken = new \Skeleton\Oauth\Entity\Accesstoken();
 		$accessToken->setClient($clientEntity);
 

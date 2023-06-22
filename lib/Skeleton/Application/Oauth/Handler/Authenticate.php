@@ -49,7 +49,8 @@ class Authenticate extends \Skeleton\Application\Oauth\Handler {
 				$auth_request = $_SESSION['auth_request'];
 
 				// This method returns a UserEntityInterface or null on failure
-				$user = User::getUserEntityByUserCredentials($body['username'], $body['password'], $auth_request->getGrantTypeId(), $auth_request->getClient());
+				$user = new User();
+				$user = $user->getUserEntityByUserCredentials($body['username'], $body['password'], $auth_request->getGrantTypeId(), $auth_request->getClient());
 			}
 
 			if ($user !== null) {

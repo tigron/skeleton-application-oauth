@@ -25,28 +25,18 @@ abstract class User extends \Skeleton\Oauth\Entity\User {
 	abstract public function get_login(): string;
 
 	/**
-	 * Get the user's firstname
-	 *
-	 * Potentially not needed in the end (would have been necessary for openid).
-	 *
-	 * @return string
-	 */
-	abstract public function get_firstname(): string;
-
-	/**
-	 * Get the user's lastname
-	 *
-	 * Potentially not needed in the end (would have been necessary for openid).
-	 *
-	 * @return string
-	 */
-	abstract public function get_lastname(): string;
-
-	/**
 	 * Authentication of the user. Should thrown an exception if it fails or
 	 * return an object implementing the User object.
 	 *
 	 * @throws \Skeleton\Oauth\Exception\Authentication\Failed()
 	 */
 	abstract public static function authenticate(string $login, string $password, string $grant_type, \Skeleton\Oauth\Entity\Client $client): User;
+
+	/**
+	 * Search for a user by their login. Should thrown an exception if it fails or
+	 * return an object implementing the User object.
+	 *
+	 * @throws \Skeleton\Oauth\Exception\Authentication\Failed()
+	 */
+	abstract public static function get_by_login(string $login): User;
 }

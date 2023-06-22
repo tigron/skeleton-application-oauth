@@ -5,7 +5,7 @@
 
 namespace Skeleton\Application\Oauth\Event;
 
-abstract class Oauth extends \Skeleton\Core\Application\Event {
+class Oauth extends \Skeleton\Core\Application\Event {
 
 	/**
 	 * User authentication was successful

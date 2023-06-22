@@ -31,4 +31,23 @@ class User implements UserRepositoryInterface {
 
 		return $user_component;
 	}
+
+	/**
+	 * Get a user entity by username
+	 *
+	 * @param string $username
+	 *
+	 * @return UserEntityInterface|null
+	 */
+	public function getUserEntityByUserIdentifier(string $username): ?\Skeleton\Oauth\Entity\User {
+		$component = \Skeleton\Application\Oauth\Component::get_classname('User');
+
+		try {
+			$user_component = $component::get_by_login($username);
+		} catch (\Skeleton\Oauth\Exception\Authentication\Failed $e) {
+			return null;
+		}
+
+		return $user_component;
+	}
 }
